@@ -1,0 +1,17 @@
+[book]
+title = "DeftShell Documentation"
+authors = ["Utsab Pant"]
+language = "en"
+src = "src"
+
+[build]
+build-dir = "../docs-site"
+
+[output.html]
+git-repository-url = "https://github.com/deftshell/deftshell"
+edit-url-template = "https://github.com/deftshell/deftshell/edit/main/book/{path}"
+default-theme = "navy"
+preferred-dark-theme = "navy"
+
+[output.html.search]
+enable = true

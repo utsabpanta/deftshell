@@ -1,0 +1,81 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/ds-cli",
+    "crates/ds-core",
+    "crates/ds-plugin-sdk",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+authors = ["DeftShell Contributors"]
+repository = "https://github.com/deftshell/deftshell"
+
+[workspace.dependencies]
+# Core
+clap = { version = "4", features = ["derive", "env"] }
+clap_complete = "4"
+tokio = { version = "1", features = ["full"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+toml = "0.8"
+anyhow = "1"
+thiserror = "2"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+chrono = { version = "0.4", features = ["serde"] }
+dirs = "6"
+uuid = { version = "1", features = ["v4"] }
+regex = "1"
+
+# TUI
+ratatui = "0.29"
+crossterm = "0.28"
+
+# Database
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+# HTTP (AI providers)
+reqwest = { version = "0.12", features = ["json", "stream", "rustls-tls", "blocking"], default-features = false }
+tokio-stream = "0.1"
+
+# Crypto (AWS SigV4 signing – already in the dep tree via rustls)
+ring = "0.17"
+
+# Git
+git2 = "0.19"
+
+# Shell
+shell-words = "1"
+which = "7"
+
+# Terminal
+indicatif = "0.17"
+dialoguer = "0.11"
+colored = "2"
+console = "0.15"
+
+# File watching
+notify = "7"
+
+# Fuzzy matching
+fuzzy-matcher = "0.3"
+
+# Glob matching
+glob = "0.3"
+
+# Testing
+tempfile = "3"
+assert_cmd = "2"
+predicates = "3"
+
+# Async
+futures = "0.3"
+async-trait = "0.1"
+
+[profile.release]
+opt-level = 3
+lto = "thin"
+strip = true

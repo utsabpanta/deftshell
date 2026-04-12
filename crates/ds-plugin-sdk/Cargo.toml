@@ -1,0 +1,12 @@
+[package]
+name = "ds-plugin-sdk"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Plugin SDK for DeftShell - build plugins to extend DeftShell functionality"
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+async-trait = { workspace = true }
+thiserror = { workspace = true }

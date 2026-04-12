@@ -1,0 +1,175 @@
+.TH DS 1 "March 2026" "DeftShell 0.1.0" "User Commands"
+.SH NAME
+ds \- AI-Powered Context-Aware Terminal for Developers
+.SH SYNOPSIS
+.B ds
+[\fIOPTIONS\fR] \fICOMMAND\fR [\fIARGS\fR]
+.SH DESCRIPTION
+DeftShell (\fBds\fR) makes your terminal intelligent, context-aware, and AI-powered.
+It auto-detects project context, integrates with multiple AI providers,
+intercepts dangerous commands, learns developer patterns, and provides
+a plugin ecosystem.
+.SH COMMANDS
+.SS "AI Commands"
+.TP
+\fBask\fR \fIquery\fR
+Ask AI a question with project context.
+.TP
+\fBdo\fR \fIinstruction\fR
+AI generates and executes commands from natural language.
+.TP
+\fBhow\fR \fIquestion\fR
+Get project-aware how-to instructions.
+.TP
+\fBexplain\fR
+Explain piped command output.
+.TP
+\fBreview\fR
+Review piped code changes.
+.TP
+\fBchat\fR [\fB--continue\fR] [\fB--context\fR \fIfile\fR]
+Interactive AI chat mode.
+.TP
+\fBgenerate\fR \fItype\fR [\fIname\fR]
+AI code generation (component, migration, test, dockerfile, github-action).
+.SS "Context & Project Commands"
+.TP
+\fBcontext\fR [\fIaction\fR]
+Show detected project context. Actions: refresh, export, diff.
+.TP
+\fBscripts\fR
+List project scripts detected from package.json, Makefile, etc.
+.TP
+\fBrun\fR \fIscript\fR
+Run a project script.
+.TP
+\fBworkspace\fR [\fIaction\fR]
+Monorepo workspace commands. Actions: list.
+.TP
+\fBenv\fR
+Display environment context information.
+.SS "Automation"
+.TP
+\fBrunbook\fR \fIaction\fR
+Runbook management. Actions: new, edit, delete, list, show, run, record, stop, generate, search, install, publish, trending.
+.TP
+\fBalias\fR [\fIaction\fR]
+Manage context-aware aliases. Actions: add, remove, list.
+.SS "Configuration & Auth"
+.TP
+\fBconfig\fR [\fIaction\fR]
+Configuration management. Actions: get, set, reset, validate, path, export, import, ui.
+.TP
+\fBauth\fR \fIaction\fR
+AI provider authentication. Actions: status, revoke, <provider>.
+.TP
+\fBprivacy\fR \fImode\fR
+Toggle privacy mode (on/off). Routes AI through local models.
+.SS "Diagnostics"
+.TP
+\fBstats\fR [\fIperiod\fR]
+Analytics dashboard. Periods: today, week, project, commands, errors, ai.
+.TP
+\fBusage\fR
+AI usage and cost tracking.
+.TP
+\fBdoctor\fR [\fB--verbose\fR]
+Diagnose issues with DeftShell setup.
+.TP
+\fBversion\fR
+Show version information.
+.SS "Setup"
+.TP
+\fBinit\fR \fIshell\fR
+Generate shell initialization script (zsh, bash, fish).
+.TP
+\fBcompletions\fR \fIshell\fR
+Generate shell completions (zsh, bash, fish).
+.TP
+\fBupdate\fR [\fB--channel\fR \fIchannel\fR] [\fB--check\fR]
+Self-update. Channels: stable, beta, nightly.
+.TP
+\fBplugin\fR \fIaction\fR
+Plugin management. Actions: list, install, remove, update, create, search, enable, disable, info.
+.SH GLOBAL OPTIONS
+.TP
+\fB--provider\fR \fIname\fR
+Override AI provider for this command.
+.TP
+\fB-y\fR, \fB--yes\fR
+Auto-confirm all prompts.
+.TP
+\fB--dry-run\fR
+Show what would be done without executing.
+.TP
+\fB--output\fR \fIfile\fR
+Write output to a file.
+.SH CONFIGURATION
+Global configuration is stored in \fB~/.deftshell/config.toml\fR.
+Project-level overrides go in \fB.deftshell.toml\fR in the project root.
+.PP
+See \fBds config path\fR for the config file location.
+.SH ENVIRONMENT
+.TP
+\fBDS_LOG_LEVEL\fR
+Override log level (trace, debug, info, warn, error).
+.TP
+\fBANTHROPIC_API_KEY\fR
+Anthropic Claude API key.
+.TP
+\fBOPENAI_API_KEY\fR
+OpenAI API key.
+.TP
+\fBGEMINI_API_KEY\fR
+Google Gemini API key.
+.TP
+\fBGITHUB_COPILOT_TOKEN\fR
+GitHub Copilot token.
+.TP
+\fBAWS_ACCESS_KEY_ID\fR, \fBAWS_SECRET_ACCESS_KEY\fR
+AWS credentials for Bedrock.
+.SH FILES
+.TP
+\fB~/.deftshell/config.toml\fR
+Global configuration file.
+.TP
+\fB~/.deftshell/db.sqlite\fR
+Command history and analytics database.
+.TP
+\fB~/.deftshell/runbooks/\fR
+Runbook storage directory.
+.TP
+\fB~/.deftshell/plugins/\fR
+Installed plugins directory.
+.TP
+\fB.deftshell.toml\fR
+Project-level configuration (in project root).
+.SH EXAMPLES
+.PP
+Ask AI about your project:
+.RS
+ds ask "how do I run the tests?"
+.RE
+.PP
+Generate and execute a command:
+.RS
+ds do "find all files larger than 10MB"
+.RE
+.PP
+Start interactive chat:
+.RS
+ds chat
+.RE
+.PP
+Create and run a deployment runbook:
+.RS
+ds runbook new deploy
+.br
+ds runbook run deploy --var env=staging
+.RE
+.SH AUTHORS
+DeftShell Contributors
+.SH LICENSE
+MIT License
+.SH SEE ALSO
+\fBgit\fR(1), \fBdocker\fR(1), \fBcargo\fR(1)

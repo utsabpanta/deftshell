@@ -1,0 +1,11 @@
+{
+  "name": "monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "devDependencies": {
+    "turbo": "^2.0.0"
+  }
+}

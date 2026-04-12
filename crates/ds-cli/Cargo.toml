@@ -1,0 +1,48 @@
+[package]
+name = "ds-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "DeftShell - The AI-Powered Context-Aware Terminal for Developers"
+
+[[bin]]
+name = "ds"
+path = "src/main.rs"
+
+[dependencies]
+ds-core = { path = "../ds-core" }
+
+# Core
+clap = { workspace = true }
+clap_complete = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+chrono = { workspace = true }
+dirs = { workspace = true }
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+colored = { workspace = true }
+uuid = { workspace = true }
+
+# TUI
+ratatui = { workspace = true }
+crossterm = { workspace = true }
+
+# Terminal
+indicatif = { workspace = true }
+dialoguer = { workspace = true }
+console = { workspace = true }
+
+# HTTP
+reqwest = { workspace = true }
+
+[dev-dependencies]
+assert_cmd = { workspace = true }
+predicates = { workspace = true }
+tempfile = { workspace = true }

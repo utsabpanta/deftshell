@@ -1,0 +1,54 @@
+[package]
+name = "ds-core"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+description = "Core library for DeftShell - context detection, AI gateway, safety engine, and more"
+
+[dependencies]
+# Core
+serde = { workspace = true }
+serde_json = { workspace = true }
+toml = { workspace = true }
+anyhow = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+chrono = { workspace = true }
+dirs = { workspace = true }
+uuid = { workspace = true }
+regex = { workspace = true }
+tokio = { workspace = true }
+async-trait = { workspace = true }
+futures = { workspace = true }
+
+# Database
+rusqlite = { workspace = true }
+
+# HTTP
+reqwest = { workspace = true }
+tokio-stream = { workspace = true }
+
+# Crypto (AWS SigV4 signing)
+ring = { workspace = true }
+
+# Git
+git2 = { workspace = true }
+
+# Shell
+shell-words = { workspace = true }
+which = { workspace = true }
+
+# Terminal
+colored = { workspace = true }
+
+# File watching
+notify = { workspace = true }
+
+# Fuzzy matching
+fuzzy-matcher = { workspace = true }
+
+# Glob matching
+glob = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }

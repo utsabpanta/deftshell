@@ -1,0 +1,33 @@
+# Rust build artifacts
+/target/
+**/*.rs.bk
+
+# Node.js
+node_modules/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# DeftShell runtime data
+.deftshell/
+
+# Environment / secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Claude Code (local/personal files)
+CLAUDE.local.md
+.claude/settings.local.json
+
+# mdBook build output
+docs-site/

@@ -1,0 +1,11 @@
+pub mod ask;
+pub mod auth;
+pub mod chat;
+pub mod config;
+pub mod context;
+pub mod do_cmd;
+pub mod doctor;
+pub mod init;
+pub mod plugin;
+pub mod runbook;
+pub mod stats;
