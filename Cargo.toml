@@ -45,7 +45,7 @@ tokio-stream = "0.1"
 ring = "0.17"
 
 # Git
-git2 = "0.19"
+git2 = { version = "0.19", features = ["vendored-openssl"] }
 
 # Shell
 shell-words = "1"
