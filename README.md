@@ -2,6 +2,8 @@
 
 **The AI-powered, context-aware shell layer for developers.**
 
+[Documentation](https://utsabpanta.github.io/deftshell/) | [Guide](https://utsabpanta.github.io/deftshell/) | [Contributing](CONTRIBUTING.md)
+
 DeftShell sits on top of your existing shell (Zsh, Bash, or Fish) and makes it intelligent — it auto-detects your project stack, connects to 6 AI providers, warns about dangerous commands before they run, learns your patterns, and lets you define reusable workflows.
 
 > Think of it as what GitHub Copilot is to your editor, but for your terminal.
@@ -38,12 +40,12 @@ Pick one method, then follow the shell setup below.
 curl -fsSL https://raw.githubusercontent.com/deftshell/deftshell/main/scripts/install.sh | sh
 ```
 
-This downloads a prebuilt binary for your platform and installs it to `/usr/local/bin`. Requires a [tagged release](https://github.com/deftshell/deftshell/releases).
+This downloads a prebuilt binary for your platform and installs it to `/usr/local/bin`. Requires a [tagged release](https://github.com/utsabpanta/deftshell/releases).
 
 ### Option B: Install via Cargo
 
 ```bash
-cargo install --git https://github.com/deftshell/deftshell.git ds-cli
+cargo install --git https://github.com/utsabpanta/deftshell.git ds-cli
 ```
 
 This builds from source and installs the `ds` binary to `~/.cargo/bin/`. Requires [Rust 1.75+](https://rustup.rs).
@@ -51,7 +53,7 @@ This builds from source and installs the `ds` binary to `~/.cargo/bin/`. Require
 ### Option C: Build from Source
 
 ```bash
-git clone https://github.com/deftshell/deftshell.git
+git clone https://github.com/utsabpanta/deftshell.git
 cd deftshell
 cargo build --release
 ```

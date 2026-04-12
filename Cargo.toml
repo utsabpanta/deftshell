@@ -11,7 +11,7 @@ version = "0.1.0"
 edition = "2021"
 license = "MIT"
 authors = ["DeftShell Contributors"]
-repository = "https://github.com/deftshell/deftshell"
+repository = "https://github.com/utsabpanta/deftshell"
 
 [workspace.dependencies]
 # Core

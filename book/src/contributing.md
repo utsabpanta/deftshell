@@ -13,7 +13,7 @@ Thank you for your interest in contributing to DeftShell!
 ### Building from Source
 
 ```bash
-git clone https://github.com/deftshell-io/deftshell.git
+git clone https://github.com/utsabpanta/deftshell.git
 cd deftshell
 cargo build
 ```
@@ -87,7 +87,7 @@ refactor: simplify runbook variable substitution
 
 ## Reporting Issues
 
-Use [GitHub Issues](https://github.com/deftshell-io/deftshell/issues) to report bugs or request features. Include:
+Use [GitHub Issues](https://github.com/utsabpanta/deftshell/issues) to report bugs or request features. Include:
 
 - DeftShell version (`ds version`)
 - OS and shell type

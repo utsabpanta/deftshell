@@ -5,13 +5,13 @@
 ### From Source
 
 ```bash
-cargo install deftshell
+cargo install --git https://github.com/utsabpanta/deftshell.git ds-cli
 ```
 
 ### Homebrew (macOS)
 
 ```bash
-brew tap deftshell-io/deftshell
+brew tap utsabpanta/deftshell
 brew install deftshell
 ```
 

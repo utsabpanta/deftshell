@@ -1,25 +1,25 @@
 class Deftshell < Formula
   desc "AI-Powered Context-Aware Terminal for Developers"
-  homepage "https://github.com/deftshell-io/deftshell"
+  homepage "https://github.com/utsabpanta/deftshell"
   version "0.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/deftshell-io/deftshell/releases/download/v#{version}/ds-aarch64-apple-darwin.tar.gz"
+      url "https://github.com/utsabpanta/deftshell/releases/download/v#{version}/ds-aarch64-apple-darwin.tar.gz"
       sha256 "PLACEHOLDER_SHA256_ARM64"
     else
-      url "https://github.com/deftshell-io/deftshell/releases/download/v#{version}/ds-x86_64-apple-darwin.tar.gz"
+      url "https://github.com/utsabpanta/deftshell/releases/download/v#{version}/ds-x86_64-apple-darwin.tar.gz"
       sha256 "PLACEHOLDER_SHA256_X86"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/deftshell-io/deftshell/releases/download/v#{version}/ds-aarch64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/utsabpanta/deftshell/releases/download/v#{version}/ds-aarch64-unknown-linux-gnu.tar.gz"
       sha256 "PLACEHOLDER_SHA256_LINUX_ARM64"
     else
-      url "https://github.com/deftshell-io/deftshell/releases/download/v#{version}/ds-x86_64-unknown-linux-gnu.tar.gz"
+      url "https://github.com/utsabpanta/deftshell/releases/download/v#{version}/ds-x86_64-unknown-linux-gnu.tar.gz"
       sha256 "PLACEHOLDER_SHA256_LINUX_X86"
     end
   end

@@ -66,12 +66,10 @@ pub fn run_update(channel: Option<&str>, check: bool) -> Result<()> {
 
     // Determine the GitHub API URL based on channel
     let api_url = match channel {
-        "stable" => {
-            "https://api.github.com/repos/deftshell-io/deftshell/releases/latest".to_string()
-        }
+        "stable" => "https://api.github.com/repos/utsabpanta/deftshell/releases/latest".to_string(),
         "beta" | "nightly" => {
             // For beta/nightly, list releases and find the latest pre-release
-            "https://api.github.com/repos/deftshell-io/deftshell/releases".to_string()
+            "https://api.github.com/repos/utsabpanta/deftshell/releases".to_string()
         }
         other => {
             bail!(
@@ -310,7 +308,7 @@ fn install_update(release: &ReleaseInfo) -> Result<()> {
     println!(
         "    {}",
         format!(
-            "curl -fsSL https://github.com/deftshell-io/deftshell/releases/download/{}/{} | tar xz",
+            "curl -fsSL https://github.com/utsabpanta/deftshell/releases/download/{}/{} | tar xz",
             release.tag_name, expected_asset
         )
         .bold()
@@ -327,10 +325,13 @@ fn install_update(release: &ReleaseInfo) -> Result<()> {
 fn print_manual_update_instructions() {
     println!("  Install / update methods:");
     println!();
-    println!("    {}    cargo install ds-cli", "Cargo:".bold());
+    println!(
+        "    {}    cargo install --git https://github.com/utsabpanta/deftshell.git ds-cli",
+        "Cargo:".bold()
+    );
     println!("    {}  brew upgrade deftshell", "Homebrew:".bold());
     println!(
-        "    {}   Download from https://github.com/deftshell-io/deftshell/releases",
+        "    {}   Download from https://github.com/utsabpanta/deftshell/releases",
         "GitHub:".bold()
     );
 }

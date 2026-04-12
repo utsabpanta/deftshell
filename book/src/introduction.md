@@ -19,7 +19,7 @@ DeftShell (`ds`) makes your terminal intelligent — it auto-detects project con
 
 ```bash
 # Install
-cargo install deftshell
+cargo install --git https://github.com/utsabpanta/deftshell.git ds-cli
 
 # Add to your shell
 eval "$(ds init zsh)"   # or bash/fish

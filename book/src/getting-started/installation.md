@@ -3,20 +3,20 @@
 ## From Source (Rust)
 
 ```bash
-cargo install deftshell
+cargo install --git https://github.com/utsabpanta/deftshell.git ds-cli
 ```
 
 ## Homebrew (macOS)
 
 ```bash
-brew tap deftshell-io/deftshell
+brew tap utsabpanta/deftshell
 brew install deftshell
 ```
 
 ## Direct Download
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/deftshell-io/deftshell/main/scripts/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/utsabpanta/deftshell/main/scripts/install.sh | bash
 ```
 
 ## Verify Installation
