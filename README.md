@@ -37,7 +37,7 @@ Pick one method, then follow the shell setup below.
 ### Option A: Quick Install Script (macOS / Linux)
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/deftshell/deftshell/main/scripts/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/utsabpanta/deftshell/main/scripts/install.sh | sh
 ```
 
 This downloads a prebuilt binary for your platform and installs it to `/usr/local/bin`. Requires a [tagged release](https://github.com/utsabpanta/deftshell/releases).

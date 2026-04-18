@@ -58,7 +58,7 @@ impl RunbookRegistry {
     /// Get trending runbooks (sorted by stars)
     pub async fn trending(&self, limit: usize) -> Result<Vec<RegistryEntry>> {
         let mut index = self.fetch_index().await?;
-        index.runbooks.sort_by(|a, b| b.stars.cmp(&a.stars));
+        index.runbooks.sort_by_key(|b| std::cmp::Reverse(b.stars));
         index.runbooks.truncate(limit);
         Ok(index.runbooks)
     }
