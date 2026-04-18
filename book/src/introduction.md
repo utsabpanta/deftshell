@@ -4,6 +4,8 @@
 
 DeftShell (`ds`) makes your terminal intelligent — it auto-detects project context, integrates with multiple AI providers, intercepts dangerous commands, learns your patterns, and provides a plugin ecosystem.
 
+**AI is optional.** Context detection, the safety engine, smart prompt, runbooks, plugins, analytics, and shell integration all work fully offline with no API key. AI only powers a small group of commands: `ask`, `do`, `how`, `explain`, `review`, `chat`, `generate`, and `runbook generate`.
+
 ## Features
 
 - **Context Detection** — Auto-detects language, framework, package manager, services, and cloud provider from project files

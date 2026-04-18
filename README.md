@@ -8,6 +8,8 @@ DeftShell sits on top of your existing shell (Zsh, Bash, or Fish) and makes it i
 
 > Think of it as what GitHub Copilot is to your editor, but for your terminal.
 
+**AI is optional.** Stack detection, the safety engine, smart prompt, runbooks, plugins, analytics, and shell integration all work fully offline — no API key required. AI only powers a small group of commands (`ask`, `do`, `how`, `explain`, `review`, `chat`, `generate`, `runbook generate`). See the [Commands](#commands) section for the breakdown.
+
 ## Why DeftShell?
 
 - **Zero config to start.** Run `eval "$(ds init zsh)"` and it works. Context detection, safety checks, and smart prompt happen automatically.
@@ -143,17 +145,19 @@ ds env
 
 ## Commands
 
-### AI Commands
+Commands marked **[AI]** require a configured AI provider (see [AI Provider Setup](#ai-provider-setup)). Everything else works offline with zero credentials.
+
+### AI Commands (require a provider)
 
 | Command | Description |
 |---------|-------------|
-| `ds ask <query>` | Ask a question with automatic project context |
-| `ds do <instruction>` | AI generates a shell command, you confirm, it runs |
-| `ds how <question>` | Get project-aware how-to instructions |
-| `ds explain` | Pipe command output to AI for explanation |
-| `ds review` | Pipe diffs to AI for code review |
-| `ds chat` | Interactive AI chat with conversation history |
-| `ds generate <type> [name]` | Generate boilerplate (component, migration, test, dockerfile, github-action) |
+| `ds ask <query>` | **[AI]** Ask a question with automatic project context |
+| `ds do <instruction>` | **[AI]** AI generates a shell command, you confirm, it runs |
+| `ds how <question>` | **[AI]** Get project-aware how-to instructions |
+| `ds explain` | **[AI]** Pipe command output to AI for explanation |
+| `ds review` | **[AI]** Pipe diffs to AI for code review |
+| `ds chat` | **[AI]** Interactive AI chat with conversation history |
+| `ds generate <type> [name]` | **[AI]** Generate boilerplate (component, migration, test, dockerfile, github-action) |
 
 ### Context Commands
 
@@ -169,6 +173,8 @@ ds env
 
 ### Runbook Commands
 
+All runbook commands work offline *except* `ds runbook generate`.
+
 | Command | Description |
 |---------|-------------|
 | `ds runbook new <name>` | Create a new runbook |
@@ -176,7 +182,7 @@ ds env
 | `ds runbook record` | Start recording your commands as a runbook |
 | `ds runbook stop` | Stop recording and save |
 | `ds runbook list` | List all runbooks |
-| `ds runbook generate <desc>` | AI-generate a runbook from a description |
+| `ds runbook generate <desc>` | **[AI]** Generate a runbook from a description |
 
 ### Management Commands
 
