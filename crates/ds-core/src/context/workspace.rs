@@ -271,12 +271,12 @@ fn read_package_json_workspaces(dir: &Path) -> Option<Vec<String>> {
 
     let workspaces = json.get("workspaces")?;
 
-    let arr = if let Some(arr) = workspaces.as_array() {
-        arr.clone()
-    } else if let Some(arr) = workspaces.get("packages").and_then(|v| v.as_array()) {
-        arr.clone()
-    } else {
-        return None;
+    let arr = match workspaces.as_array() {
+        Some(arr) => arr.clone(),
+        None => workspaces
+            .get("packages")
+            .and_then(|v| v.as_array())?
+            .clone(),
     };
 
     let globs: Vec<String> = arr
