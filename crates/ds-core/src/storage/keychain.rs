@@ -132,7 +132,7 @@ mod tests {
     #[test]
     fn test_keychain_store_creation() {
         let _store = KeychainStore::new();
-        let _store_default = KeychainStore::default();
+        let _store_default = KeychainStore;
     }
 
     #[test]

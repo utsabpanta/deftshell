@@ -31,8 +31,8 @@ uuid = { version = "1", features = ["v4"] }
 regex = "1"
 
 # TUI
-ratatui = "0.29"
-crossterm = "0.28"
+ratatui = "0.30"
+crossterm = "0.29"
 
 # Database
 rusqlite = { version = "0.32", features = ["bundled"] }
@@ -45,20 +45,20 @@ tokio-stream = "0.1"
 ring = "0.17"
 
 # Git
-git2 = { version = "0.19", features = ["vendored-openssl"] }
+git2 = { version = "0.21", features = ["vendored-openssl"] }
 
 # Shell
 shell-words = "1"
 which = "7"
 
 # Terminal
-indicatif = "0.17"
+indicatif = "0.18"
 dialoguer = "0.11"
 colored = "2"
 console = "0.15"
 
 # File watching
-notify = "7"
+notify = "8"
 
 # Fuzzy matching
 fuzzy-matcher = "0.3"

@@ -399,7 +399,7 @@ impl PromptRenderer {
         let head = repo.head().ok();
         let branch = head
             .as_ref()
-            .and_then(|h| h.shorthand().map(|s| s.to_string()));
+            .and_then(|h| h.shorthand().ok().map(|s| s.to_string()));
 
         let dirty = {
             let statuses = repo.statuses(Some(

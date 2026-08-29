@@ -38,7 +38,7 @@ mod context_detection {
 
     /// Helper to compare language names case-insensitively.
     fn lang_eq(detected: Option<&str>, expected: &str) -> bool {
-        detected.map_or(false, |d| d.eq_ignore_ascii_case(expected))
+        detected.is_some_and(|d| d.eq_ignore_ascii_case(expected))
     }
 
     #[test]
@@ -279,8 +279,10 @@ mod safety {
 
     #[test]
     fn allowlist_bypasses_rules() {
-        let mut config = SafetyConfig::default();
-        config.allowlist = vec!["rm -rf /tmp/test".to_string()];
+        let config = SafetyConfig {
+            allowlist: vec!["rm -rf /tmp/test".to_string()],
+            ..Default::default()
+        };
         let interceptor = CommandInterceptor::new(&config).unwrap();
         let ctx = default_context();
 
@@ -291,8 +293,10 @@ mod safety {
 
     #[test]
     fn denylist_always_blocks() {
-        let mut config = SafetyConfig::default();
-        config.denylist = vec!["curl.*evil\\.com".to_string()];
+        let config = SafetyConfig {
+            denylist: vec!["curl.*evil\\.com".to_string()],
+            ..Default::default()
+        };
         let interceptor = CommandInterceptor::new(&config).unwrap();
         let ctx = default_context();
 
@@ -304,8 +308,10 @@ mod safety {
 
     #[test]
     fn disabled_safety_skips_all_checks() {
-        let mut config = SafetyConfig::default();
-        config.enabled = false;
+        let config = SafetyConfig {
+            enabled: false,
+            ..Default::default()
+        };
         let interceptor = CommandInterceptor::new(&config).unwrap();
         let ctx = default_context();
 
@@ -714,8 +720,10 @@ mod gateway {
     #[test]
     fn gateway_skips_explicitly_disabled_providers() {
         let mut config = AiConfig::default();
-        let mut disabled = AiProviderConfig::default();
-        disabled.enabled = false;
+        let disabled = AiProviderConfig {
+            enabled: false,
+            ..Default::default()
+        };
         config.providers.insert("anthropic".to_string(), disabled);
 
         let gateway = AiGateway::new(&config);
@@ -728,8 +736,10 @@ mod gateway {
 
     #[test]
     fn gateway_set_provider_changes_default() {
-        let mut config = AiConfig::default();
-        config.default_provider = "ollama".to_string();
+        let config = AiConfig {
+            default_provider: "ollama".to_string(),
+            ..Default::default()
+        };
 
         let mut gateway = AiGateway::new(&config);
 
